@@ -1,0 +1,276 @@
+ZIP MANIFEST - ai-video-editor-engine.zip
+Generated 2026-11-10. Paths are relative to the zip root (folder: ai-video-editor-engine/).
+
+=== 1. ENTRY POINTS (read first) ===
+  skill.md
+  README.md
+  REPO_MANIFEST.md
+  60s_storyboard_example.json
+  zip_manifest.txt
+
+=== 2. FILES CREATED BY THE DIRECTOR BUILD (engine code, templates, docs) ===
+  60s_storyboard_example.json
+  README.md
+  REPO_MANIFEST.md
+  license_notes/LICENSES.md
+  repos/repos.lock.json
+  resources/Amazon_-_From_A_to_Z_-_PROMPT.pdf
+  resources/Motion-as-Code-Workflow-Guide.pdf
+  sample_prompts/maximal_inputs.md
+  sample_prompts/minimal_url_only.md
+  sample_prompts/stage_prompts.md
+  scripts/analyze_audio.py
+  scripts/check_env.sh
+  scripts/deliver.sh
+  scripts/ingest.sh
+  scripts/make_sample.sh
+  scripts/mix_audio.sh
+  scripts/render_hyperframes.sh
+  scripts/render_remotion.sh
+  scripts/setup_repos.sh
+  scripts/transcribe.sh
+  scripts/validate_storyboard.py
+  skill.md
+  templates/brief_intake.md
+  templates/qa_checklist.md
+  templates/r3f/Product3D.tsx
+  templates/remotion-minimal/package.json
+  templates/remotion-minimal/remotion.config.ts
+  templates/remotion-minimal/src/Launch.tsx
+  templates/remotion-minimal/src/Root.tsx
+  templates/remotion-minimal/src/index.ts
+  templates/remotion-minimal/tsconfig.json
+  templates/sfx_cue_sheet.csv
+  templates/storyboard_template.md
+  tests/run_test_launch.sh
+  tests/sample/sample_reference.mp4
+  tests/test_launch_checklist.md
+
+=== 3. ACTIVE CLAUDE CODE SKILLS (.claude/) ===
+  video-director = skill.md with Claude Code frontmatter; saas-animation = copy of the user's skill (SKILL.md, references, scripts, templates)
+  .claude/skills/saas-animation/SKILL.md
+  .claude/skills/saas-animation/references/blender.md
+  .claude/skills/saas-animation/references/engine-2d-puppet.md
+  .claude/skills/saas-animation/references/engine-3d.md
+  .claude/skills/saas-animation/references/into-footage.md
+  .claude/skills/saas-animation/references/pitfalls.md
+  .claude/skills/saas-animation/references/sound-and-music.md
+  .claude/skills/saas-animation/references/style-rules.md
+  .claude/skills/saas-animation/scripts/blender/example_scene.py
+  .claude/skills/saas-animation/scripts/blender/kit.py
+  .claude/skills/saas-animation/scripts/blender/mesh_from_sdf.py
+  .claude/skills/saas-animation/scripts/blender/tracks.py
+  .claude/skills/saas-animation/scripts/compose_into_clip.py
+  .claude/skills/saas-animation/scripts/contact_sheet.py
+  .claude/skills/saas-animation/scripts/gl3d.js
+  .claude/skills/saas-animation/scripts/grid.py
+  .claude/skills/saas-animation/scripts/key.py
+  .claude/skills/saas-animation/scripts/mix.py
+  .claude/skills/saas-animation/scripts/puppet.js
+  .claude/skills/saas-animation/scripts/render.mjs
+  .claude/skills/saas-animation/scripts/split.py
+  .claude/skills/saas-animation/scripts/synth_sfx.py
+  .claude/skills/saas-animation/templates/storyboard.html
+  .claude/skills/saas-animation/templates/template-2d.html
+  .claude/skills/saas-animation/templates/template-3d.html
+  .claude/skills/video-director/SKILL.md
+
+=== 4. USER RESOURCES INCLUDED UNMODIFIED (resources/) ===
+  resources/Amazon_-_From_A_to_Z_-_PROMPT.pdf
+  resources/Motion-as-Code-Workflow-Guide.pdf
+  resources/saas-animation-skill/  (the original .skill bundle, its unpacked files and HOW_TO_USE_THE_SKILL.txt)
+    resources/saas-animation-skill/HOW_TO_USE_THE_SKILL.txt
+    resources/saas-animation-skill/SKILL.md
+    resources/saas-animation-skill/references/blender.md
+    resources/saas-animation-skill/references/engine-2d-puppet.md
+    resources/saas-animation-skill/references/engine-3d.md
+    resources/saas-animation-skill/references/into-footage.md
+    resources/saas-animation-skill/references/pitfalls.md
+    resources/saas-animation-skill/references/sound-and-music.md
+    resources/saas-animation-skill/references/style-rules.md
+    resources/saas-animation-skill/saas-animation.skill
+    resources/saas-animation-skill/scripts/blender/example_scene.py
+    resources/saas-animation-skill/scripts/blender/kit.py
+    resources/saas-animation-skill/scripts/blender/mesh_from_sdf.py
+    resources/saas-animation-skill/scripts/blender/tracks.py
+    resources/saas-animation-skill/scripts/compose_into_clip.py
+    resources/saas-animation-skill/scripts/contact_sheet.py
+    resources/saas-animation-skill/scripts/gl3d.js
+    resources/saas-animation-skill/scripts/grid.py
+    resources/saas-animation-skill/scripts/key.py
+    resources/saas-animation-skill/scripts/mix.py
+    resources/saas-animation-skill/scripts/puppet.js
+    resources/saas-animation-skill/scripts/render.mjs
+    resources/saas-animation-skill/scripts/split.py
+    resources/saas-animation-skill/scripts/synth_sfx.py
+    resources/saas-animation-skill/templates/storyboard.html
+    resources/saas-animation-skill/templates/template-2d.html
+    resources/saas-animation-skill/templates/template-3d.html
+  resources/motion-as-code-kit/  (your Motion_as_kit.zip contents, minus app/node_modules which `bun install` rebuilds)
+    resources/motion-as-code-kit/.claude/launch.json
+    resources/motion-as-code-kit/.gitignore
+    resources/motion-as-code-kit/LICENSE.pdoom-engine
+    resources/motion-as-code-kit/README.md
+    resources/motion-as-code-kit/analysis/align_vo.py
+    resources/motion-as-code-kit/analysis/audio_vo.py
+    resources/motion-as-code-kit/analysis/models/preprocessor_config.json
+    resources/motion-as-code-kit/analysis/models/vocab.json
+    resources/motion-as-code-kit/analysis/models/w2v2_base_960h_q.onnx
+    resources/motion-as-code-kit/analysis/sfx_mix.py
+    resources/motion-as-code-kit/app/.gitignore
+    resources/motion-as-code-kit/app/bun.lock
+    resources/motion-as-code-kit/app/index.html
+    resources/motion-as-code-kit/app/package.json
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1000-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1000-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1000-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1000-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1125-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1125-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1125-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1125-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1250-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1250-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1250-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w1250-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w620-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w620-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w620-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w620-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w750-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w750-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w750-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w750-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w875-300.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w875-500.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w875-700.ttf
+    resources/motion-as-code-kit/app/public/fonts/Archivo-w875-900.ttf
+    resources/motion-as-code-kit/app/public/fonts/ArchivoItalic-w1000-400.ttf
+    resources/motion-as-code-kit/app/public/fonts/ArchivoItalic-w1000-800.ttf
+    resources/motion-as-code-kit/app/public/fonts/ArchivoItalic-w750-400.ttf
+    resources/motion-as-code-kit/app/public/fonts/ArchivoItalic-w750-800.ttf
+    resources/motion-as-code-kit/app/public/fonts/Cormorant-400.ttf
+    resources/motion-as-code-kit/app/public/fonts/Cormorant-600.ttf
+    resources/motion-as-code-kit/app/public/fonts/CormorantItalic-400.ttf
+    resources/motion-as-code-kit/app/public/fonts/CormorantItalic-600.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/Archivo-Italic[wdth,wght].ttf
+    resources/motion-as-code-kit/app/public/fonts/src/Archivo[wdth,wght].ttf
+    resources/motion-as-code-kit/app/public/fonts/src/CormorantGaramond-Italic[wght].ttf
+    resources/motion-as-code-kit/app/public/fonts/src/CormorantGaramond[wght].ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-Bold.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-Italic.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-Light.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-Medium.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-Regular.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/IBMPlexMono-SemiBold.ttf
+    resources/motion-as-code-kit/app/public/fonts/src/OFL.txt
+    resources/motion-as-code-kit/app/public/fonts/stroke/EMSAllure.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/EMSFelix.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/EMSOsmotron.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/EMSReadability.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/EMSTech.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/HersheySans1.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/HersheyScript1.svg
+    resources/motion-as-code-kit/app/public/fonts/stroke/HersheySerifMed.svg
+    resources/motion-as-code-kit/app/scripts/render.ts
+    resources/motion-as-code-kit/app/src/engine/audio.ts
+    resources/motion-as-code-kit/app/src/engine/engine.ts
+    resources/motion-as-code-kit/app/src/engine/gl.ts
+    resources/motion-as-code-kit/app/src/engine/glsl/common.ts
+    resources/motion-as-code-kit/app/src/engine/hud.ts
+    resources/motion-as-code-kit/app/src/engine/lines.ts
+    resources/motion-as-code-kit/app/src/engine/lyrics.ts
+    resources/motion-as-code-kit/app/src/engine/palette.ts
+    resources/motion-as-code-kit/app/src/engine/post.ts
+    resources/motion-as-code-kit/app/src/engine/scale.ts
+    resources/motion-as-code-kit/app/src/engine/scene.ts
+    resources/motion-as-code-kit/app/src/engine/stroke.ts
+    resources/motion-as-code-kit/app/src/engine/type.ts
+    resources/motion-as-code-kit/app/src/engine/util.ts
+    resources/motion-as-code-kit/app/src/main.ts
+    resources/motion-as-code-kit/app/src/scenes/_motifs.ts
+    resources/motion-as-code-kit/app/src/scenes/_vo.ts
+    resources/motion-as-code-kit/app/src/scenes/code.ts
+    resources/motion-as-code-kit/app/src/scenes/crazy.ts
+    resources/motion-as-code-kit/app/src/scenes/edits.ts
+    resources/motion-as-code-kit/app/src/scenes/frames.ts
+    resources/motion-as-code-kit/app/src/scenes/hook.ts
+    resources/motion-as-code-kit/app/src/scenes/model.ts
+    resources/motion-as-code-kit/app/src/scenes/pipeline.ts
+    resources/motion-as-code-kit/app/src/scenes/prompt-data.ts
+    resources/motion-as-code-kit/app/src/scenes/prompt.ts
+    resources/motion-as-code-kit/app/src/scenes/verdict.ts
+    resources/motion-as-code-kit/app/src/timeline.ts
+    resources/motion-as-code-kit/app/tsconfig.json
+    resources/motion-as-code-kit/app/tsconfig.scripts.json
+    resources/motion-as-code-kit/app/vite.config.ts
+    resources/motion-as-code-kit/audio/sfx/confirm_chime_1.mp3
+    resources/motion-as-code-kit/audio/sfx/enter_key_1.mp3
+    resources/motion-as-code-kit/audio/sfx/falling_pieces_1.mp3
+    resources/motion-as-code-kit/audio/sfx/impact_slam_1.mp3
+    resources/motion-as-code-kit/audio/sfx/impact_small_1.mp3
+    resources/motion-as-code-kit/audio/sfx/impact_small_2.mp3
+    resources/motion-as-code-kit/audio/sfx/key_click_1.mp3
+    resources/motion-as-code-kit/audio/sfx/key_click_2.mp3
+    resources/motion-as-code-kit/audio/sfx/marker_strike_1.mp3
+    resources/motion-as-code-kit/audio/sfx/mouse_click_1.mp3
+    resources/motion-as-code-kit/audio/sfx/paper_slide_1.mp3
+    resources/motion-as-code-kit/audio/sfx/pen_line_1.mp3
+    resources/motion-as-code-kit/audio/sfx/pen_tick_1.mp3
+    resources/motion-as-code-kit/audio/sfx/projector_click_1.mp3
+    resources/motion-as-code-kit/audio/sfx/projector_run_1.mp3
+    resources/motion-as-code-kit/audio/sfx/reverse_suck_1.mp3
+    resources/motion-as-code-kit/audio/sfx/riser_1.mp3
+    resources/motion-as-code-kit/audio/sfx/scan_sweep_1.mp3
+    resources/motion-as-code-kit/audio/sfx/snip_1.mp3
+    resources/motion-as-code-kit/audio/sfx/spark_ignite_1.mp3
+    resources/motion-as-code-kit/audio/sfx/spark_sizzle_1.mp3
+    resources/motion-as-code-kit/audio/sfx/spark_zip_1.mp3
+    resources/motion-as-code-kit/audio/sfx/stamp_1.mp3
+    resources/motion-as-code-kit/audio/sfx/tape_rewind_1.mp3
+    resources/motion-as-code-kit/audio/sfx/typewriter_1.mp3
+    resources/motion-as-code-kit/audio/sfx/typewriter_2.mp3
+    resources/motion-as-code-kit/audio/sfx/ui_blip_1.mp3
+    resources/motion-as-code-kit/audio/sfx/ui_blip_2.mp3
+    resources/motion-as-code-kit/audio/sfx/ui_tick_1.mp3
+    resources/motion-as-code-kit/audio/sfx/whoosh_fast_1.mp3
+    resources/motion-as-code-kit/audio/sfx/whoosh_fast_2.mp3
+    resources/motion-as-code-kit/audio/sfx/whoosh_soft_1.mp3
+    resources/motion-as-code-kit/audio/sfx/zap_slash_1.mp3
+    resources/motion-as-code-kit/audio/voiceover.mp3
+    resources/motion-as-code-kit/data/audio.json
+    resources/motion-as-code-kit/data/lyrics.json
+    resources/motion-as-code-kit/data/voiceover.words.json
+
+=== 5. POINTERS (cloned or installed at setup, NOT inside the zip) ===
+  repos/repos.lock.json lists every source with its pinned commit or package version.
+  Cloned by `bash scripts/setup_repos.sh` into repos/vendor/ (pinned commits):
+    repos/vendor/claude-video/   <- bradautomates/claude-video @ 03ceb42
+    repos/vendor/claude-sound-ear/   <- thetoyosibello/claude-sound-ear @ bf644c3
+    repos/vendor/audio-analyzer-rs/   <- JuzzyDee/audio-analyzer-rs @ 0387fe1
+    repos/vendor/claude-motion/   <- whaleyxbt/claude-motion @ 6f80380
+    repos/vendor/rea-video/   <- JuneYaooo/rea-video @ 3522250
+    repos/vendor/motion-graphics-skills/   <- charlie947/motion-graphics-skills @ 229022e
+    repos/vendor/product-launch-video/   <- EveryInc/product-launch-video @ 68660ae
+    repos/vendor/brag/   <- latent-spaces/brag @ 669ab92
+  Installed with package managers (never vendored): heygen-com/hyperframes (npm), FFmpeg/FFmpeg (OS package), openai/whisper (pip), Surya17155/yt-dlp (pip from git; fallback upstream yt-dlp),
+    remotion-dev/remotion (npm, license check), mrdoob/three.js (npm), pmndrs/react-three-fiber (npm), greensock/GSAP (npm).
+  License-gated, NOT included and OFF by default: Pr1m4lc0d3/metaphrasis (proprietary), feitangyuan/onetake (noncommercial; ALLOW_GATED=1 only after the user confirms a license).
+
+=== 6. CREATED AT RUNTIME (not in the zip) ===
+  projects/<client-slug>/{brief.json,brand/,references/,analysis/,storyboard/,build/,audio/,renders/,report/}
+  repos/vendor/
+  tests/report/{test_report.md,logs/,out/}
+  templates/remotion-minimal/node_modules/ and out/
+  resources/motion-as-code-kit/app/node_modules/ and out/
+
+=== 7. ADDED BY THE DIRECTOR (name + reason) ===
+  yt-dlp/yt-dlp upstream - fallback when the fork lags
+  librosa - optional beat/onset fallback
+  hexgrad/kokoro - optional free neutral TTS
+  Blender - Level 3 product renders (from saas-animation)
+  Playwright Chromium - headless captures and claude-motion simulations
+  Pillow, numpy, scipy, opencv-python - required by saas-animation scripts and analyze_audio.py
+  SFX sources (Mixkit, Freesound CC0, Pixabay, Kenney) - free libraries; log licenses in audio/licenses.csv
+
+TOTAL FILES IN ZIP: 224 (including this manifest)

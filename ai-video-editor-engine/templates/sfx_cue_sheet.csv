@@ -1,0 +1,8 @@
+event,at_seconds,file_or_keyword,gain_db,align,pitch,pan,notes
+hook.slam,1.00,Soft Hit,-10,peak,1.0,0,place 30 ms early; hero-class hit
+hook.whoosh,3.00,Whoosh 2,-30,peak,1.0,0,movement only
+card.pop,4.00,Pop,-16,peak,1.0,0,shape morph gets a pop not a whoosh
+badge.ratchet.1,9.00,Pop,-20,peak,0.90,0,rising ratchet 0.90 to 1.30
+reveal.hero,13.00,Soft Hit,-8,peak,0.9,0,hero hit: nothing else within 60 ms
+ui.click,20.00,Tick,-18,peak,1.0,0,tonal click on contact
+final.hit,52.00,Soft Hit,-8,peak,0.9,0,final hit plus chord

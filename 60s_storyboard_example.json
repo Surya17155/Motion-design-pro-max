@@ -1,0 +1,930 @@
+{
+  "_meta": {
+    "title": "60-second product-launch storyboard template (generic SaaS). Replace every [PLACEHOLDER] with real, approved content.",
+    "convention": "Entry N covers the time span (N-1, N) seconds. Times inside a description are absolute seconds from the start of the video.",
+    "defaults": {
+      "fps": 60,
+      "resolution": "1920x1080",
+      "audio": "48 kHz, 24-bit master",
+      "music_bpm": 120,
+      "beat_seconds": 0.5,
+      "bar_seconds": 2.0,
+      "lufs": {
+        "social": -14,
+        "streaming": -16,
+        "broadcast_user_default": -9,
+        "voice_stem": -16,
+        "true_peak_dbtp": -1.5
+      },
+      "note_broadcast": "Real broadcast specs are usually -23 LUFS (EBU R128) or -24 LKFS (ATSC A/85); ask for the delivery spec."
+    },
+    "carrier": "One accent-coloured line is the carrier object. It streaks in, becomes the headline underline, the card outline, the wipe edge, the timeline and finally slots into the logo. Draw it through ONE shared function so it is identical everywhere.",
+    "hits_on_bar_lines": {
+      "hook_slam": 1.0,
+      "reveal_hero_hit": 13.0,
+      "feature_1": 19.0,
+      "feature_2": 28.0,
+      "feature_3": 37.0,
+      "proof": 46.0,
+      "final_hit": 52.0
+    },
+    "voiceover_placeholder_script": [
+      {
+        "start": 1.4,
+        "line": "[Hook question]"
+      },
+      {
+        "start": 5.2,
+        "line": "[Pain statement, part 1]"
+      },
+      {
+        "start": 10.5,
+        "line": "[Pain statement, part 2]"
+      },
+      {
+        "start": 13.3,
+        "line": "Meet [PRODUCT]."
+      },
+      {
+        "start": 14.3,
+        "line": "[One-line promise]"
+      },
+      {
+        "start": 19.3,
+        "line": "[Feature 1]"
+      },
+      {
+        "start": 28.3,
+        "line": "[Feature 2]"
+      },
+      {
+        "start": 37.3,
+        "line": "[Feature 3]"
+      },
+      {
+        "start": 46.3,
+        "line": "[Proof line]"
+      },
+      {
+        "start": 53.2,
+        "line": "[Brand line]"
+      },
+      {
+        "start": 55.2,
+        "line": "[Call to action]"
+      }
+    ],
+    "vo_pacing": "About 2.2 words per second; keep every line to 7 words or fewer.",
+    "segments": [
+      {
+        "name": "HOOK",
+        "seconds": "1-5",
+        "mix": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+      },
+      {
+        "name": "PROBLEM",
+        "seconds": "6-13",
+        "mix": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+      },
+      {
+        "name": "REVEAL",
+        "seconds": "14-19",
+        "mix": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+      },
+      {
+        "name": "FEATURE 1",
+        "seconds": "20-28",
+        "mix": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+      },
+      {
+        "name": "FEATURE 2",
+        "seconds": "29-37",
+        "mix": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+      },
+      {
+        "name": "FEATURE 3",
+        "seconds": "38-46",
+        "mix": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+      },
+      {
+        "name": "PROOF",
+        "seconds": "47-52",
+        "mix": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+      },
+      {
+        "name": "PAYOFF",
+        "seconds": "53-60",
+        "mix": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+      }
+    ],
+    "rules": [
+      "Real UI copy or clearly marked placeholders only; no invented statistics, reviews or logos.",
+      "Whooshes only for movement; cuts and shape morphs get pops, ticks or soft hits.",
+      "Nothing but the hero hit within 60 ms of a hero beat.",
+      "Music at least 12 dB under every spoken word."
+    ],
+    "validate_with": "python3 scripts/validate_storyboard.py 60s_storyboard_example.json --seconds 60"
+  },
+  "storyboard": [
+    {
+      "second": 1,
+      "segment": "HOOK",
+      "visual_description": "Near-black stage (#070707). One accent-colour line streaks toward the camera from deep space, already moving at frame 0.",
+      "animation_description": "Line scales along z with 2.5D parallax and radial blur; 12 motion-blur sub-frames; power4.out over 0.9 s; dim amber glow drifts behind.",
+      "transition_from_previous": "None: frame 0 is already moving.",
+      "audio_description": "Sub-bass swell fades in from 0.00; airy riser peaks at 1.00; no voice yet.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "FFmpeg"
+      ],
+      "mix_notes": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+    },
+    {
+      "second": 2,
+      "segment": "HOOK",
+      "visual_description": "The line slams under the hook headline '[HOOK QUESTION]'. Headline in white, one accent word in brand colour.",
+      "animation_description": "Slam at 1.00: 6 px camera shake over 120 ms, 8 light shards; words fade up from 6 px blur with a 24 px rise, 70 ms stagger, expo.out.",
+      "transition_from_previous": "1.00: the streaking line lands on the headline baseline and becomes its underline (same object, no cut).",
+      "audio_description": "Low impact hit on 1.00 (peak -10 dBFS, placed 30 ms early); pad enters; VO line 1 starts 1.40: '[Hook question]'.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "claude-motion",
+        "sound-design cue sheet"
+      ],
+      "mix_notes": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+    },
+    {
+      "second": 3,
+      "segment": "HOOK",
+      "visual_description": "Headline holds. The accent word is underlined by the line and pulses once on the stress word.",
+      "animation_description": "Underline scaleX 1.00 to 1.06 and back, sine.inOut 400 ms at 2.00; camera drift 0.5 %/s push; no other motion.",
+      "transition_from_previous": "Continuous hold with drift: no cut, no fade.",
+      "audio_description": "VO continues; one soft tick (-24 dBFS) on the stress word at 2.00.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+    },
+    {
+      "second": 4,
+      "segment": "HOOK",
+      "visual_description": "Headline lifts away; the line peels off the baseline and bends into a loop.",
+      "animation_description": "Headline translateY -40 px and fade over 300 ms (power2.in); line path morphs from straight to loop over 600 ms (power3.inOut).",
+      "transition_from_previous": "3.00-3.30: headline exits upward while the line stays on screen and becomes the next shape.",
+      "audio_description": "Soft whoosh for the movement (-30 dB) peaking 3.35.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+    },
+    {
+      "second": 5,
+      "segment": "HOOK",
+      "visual_description": "The loop closes and morphs into a stack of three cards (the user's everyday tools), centred.",
+      "animation_description": "Loop to rounded-rectangle morph 500 ms (power3.inOut) with 8 % anticipation squash; cards offset 14 px each in z.",
+      "transition_from_previous": "4.00: the loop becomes the front card outline (shape morph, no dissolve).",
+      "audio_description": "Pop (-16 dBFS) on the beat at 4.00; music pad opens a filter.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Music bed about -28 LUFS short-term; SFX transients -24 to -10 dBFS; hook hit -10 dBFS."
+    },
+    {
+      "second": 6,
+      "segment": "PROBLEM",
+      "visual_description": "The card stack fans out in 3D; each card shows a messy fragment ('[PAIN VISUAL 1]', real UI copy or a marked placeholder).",
+      "animation_description": "Cards rotateY +-12 degrees and spread 0 to 140 px in z, back.out(1.2) 500 ms, 80 ms stagger; back card gets 6 px depth-of-field blur.",
+      "transition_from_previous": "5.00: the stack from second 5 fans out; nothing cut.",
+      "audio_description": "Three paper-slide swipes (-26 dB, 80 ms apart); VO 5.20: '[Pain statement, part 1]'.",
+      "repo_tools": [
+        "Three.js",
+        "GSAP",
+        "HyperFrames"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 7,
+      "segment": "PROBLEM",
+      "visual_description": "Camera pushes toward the front card; a counter reads '[N] hours lost' (only if the user can back the claim; otherwise a placeholder).",
+      "animation_description": "Camera dolly 1600 to 1200 over 1 s (power3.inOut); counter ticker 0 to [N] over 800 ms (linear is allowed for tickers).",
+      "transition_from_previous": "6.00: push-in continues the fan-out's direction.",
+      "audio_description": "Soft counter ticks (-26 dBFS) every 100 ms; VO continues.",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 8,
+      "segment": "PROBLEM",
+      "visual_description": "Counter stops on its value; the whole scene drains colour to show friction.",
+      "animation_description": "Saturation 1.0 to 0.4 over 700 ms (sine.inOut); cards slow to 40 % speed; depth-of-field widens.",
+      "transition_from_previous": "7.00: counter landing triggers the colour drain.",
+      "audio_description": "Music low-pass sweeps 8 kHz to 2 kHz over 1 s for tension; no SFX.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "FFmpeg"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 9,
+      "segment": "PROBLEM",
+      "visual_description": "The front card flips to reveal a frozen loading spinner.",
+      "animation_description": "Card rotateX 90 degrees in 300 ms (power3.in), swap at edge-on, back to 0 in 300 ms; spinner decelerates to a stop over 700 ms (power3.out).",
+      "transition_from_previous": "8.00: edge-on swap hides the content change (no visible cut).",
+      "audio_description": "Flip tick (-20 dBFS) at edge-on; spinner wind-down pop pitched 0.8.",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 10,
+      "segment": "PROBLEM",
+      "visual_description": "The spinner's centre dot becomes the first of many notification badges.",
+      "animation_description": "Dot to badge morph 200 ms; badge duplicates into a 3x3 grid, scale 0 to 1 with back.out(1.4) 250 ms, 40 ms stagger.",
+      "transition_from_previous": "9.00: the stalled dot morphs into a badge (circle to circle).",
+      "audio_description": "Rising pop ratchet: nine pops pitched 0.90 to 1.30 (-20 dBFS), then a riser begins.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 11,
+      "segment": "PROBLEM",
+      "visual_description": "The badges swarm to fill the frame; the camera pulls back to show chaos (about 60 panels in 3D).",
+      "animation_description": "Instanced panels fly in with expo.out 900 ms; camera z 900 to 1400; foreground blur 4 px, background 2 px.",
+      "transition_from_previous": "10.00: the badge grid multiplies into the swarm (no cut).",
+      "audio_description": "Riser continues; VO 10.50: '[Pain statement, part 2]'.",
+      "repo_tools": [
+        "Three.js",
+        "react-three-fiber",
+        "GSAP"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 12,
+      "segment": "PROBLEM",
+      "visual_description": "The chaos holds and dims; a single point of light appears in the middle: the accent line returns.",
+      "animation_description": "Swarm blur 8 px and brightness 100 to 30 % over 600 ms; line draws from centre outward, dashoffset 600 ms (power2.out).",
+      "transition_from_previous": "11.00: the swarm blurs back as the line re-enters.",
+      "audio_description": "Music drops to pad only at 11.50 (-6 dB); reversed swell starts.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 13,
+      "segment": "PROBLEM",
+      "visual_description": "The line tightens into one thin horizontal thread across the frame centre; the chaos collapses into it.",
+      "animation_description": "All panels translate to y=0 and scale 1 to 0, stagger from the outside in, power4.in 600 ms; line brightens to full accent.",
+      "transition_from_previous": "12.00: panels are sucked into the line (one object absorbs the rest).",
+      "audio_description": "Mechanical suction SFX 12.20 to 12.90 (-26 dB); reversed swell peaks at 12.95; silence at 12.97.",
+      "repo_tools": [
+        "Three.js",
+        "GSAP",
+        "HyperFrames"
+      ],
+      "mix_notes": "VO about -16 LUFS; music at least 12 dB under every word, low-passed for tension; SFX -30 to -18 dBFS."
+    },
+    {
+      "second": 14,
+      "segment": "REVEAL",
+      "visual_description": "HIT at 13.00: the line blooms into a circle then a rounded square: the product icon; the product wordmark reveals (supplied logo, never redrawn).",
+      "animation_description": "Line to circle to squircle 500 ms (power3.inOut), 8 % anticipation squash; wordmark words fade up from blur, 80 ms stagger; soft glow flash.",
+      "transition_from_previous": "13.00: line becomes the icon container (continuity of the carrier).",
+      "audio_description": "HERO HIT at 13.00: full warm chord plus low hit (-8 dBFS), nothing else within 60 ms; VO 13.30: 'Meet [PRODUCT].'",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "official logo file"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 15,
+      "segment": "REVEAL",
+      "visual_description": "Logo holds alive; a slow light passes across the wordmark; the tagline '[ONE-LINE PROMISE]' appears word by word below.",
+      "animation_description": "Light sweep (source-atop gradient band) sine.inOut 1.0 s; tagline words 70 ms stagger; camera drift 0.5 %/s.",
+      "transition_from_previous": "Hold with micro-motion; no cut.",
+      "audio_description": "VO 14.30: '[One-line promise]'; pad sustains.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 16,
+      "segment": "REVEAL",
+      "visual_description": "Logo and tagline lift out through a mask; the squircle grows into the app window frame.",
+      "animation_description": "Squircle scale 1 to 12 over 700 ms (power3.inOut) while flooding with the UI background colour (#0F1111 style).",
+      "transition_from_previous": "15.00: icon grows into the window (shape morph).",
+      "audio_description": "Soft whoosh (-28 dB) for the movement; pop at 15.80 (-16 dBFS) on landing.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 17,
+      "segment": "REVEAL",
+      "visual_description": "The app window sits in 3D space with the user's real UI screenshot on its panel.",
+      "animation_description": "Panel z -300 to 0 with expo.out 900 ms; camera orbits 4 degrees right; one sheen band crosses the glass; background blurred 6 px.",
+      "transition_from_previous": "16.00: the window frame completes into the screenshot panel.",
+      "audio_description": "Subtle UI pop (-20 dBFS); air bed fades in.",
+      "repo_tools": [
+        "saas-animation",
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 18,
+      "segment": "REVEAL",
+      "visual_description": "Three one-word callouts point to three areas of the UI.",
+      "animation_description": "Leader lines draw 300 ms (power2.out); labels fade up from blur with a small rise, 70 ms stagger.",
+      "transition_from_previous": "17.00: callouts grow from the panel's edges; the panel keeps drifting.",
+      "audio_description": "Three tonal clicks, pitched 1.00 / 1.12 / 1.26 (-22 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 19,
+      "segment": "REVEAL",
+      "visual_description": "The camera starts a long push toward the first UI area; the other callouts fade away.",
+      "animation_description": "Dolly 1600 to 900 over 1 s (power3.inOut), one continuous curve; unchosen callouts fade 300 ms.",
+      "transition_from_previous": "18.00: the chosen area stays sharp while the rest drops out.",
+      "audio_description": "Reverse-cymbal riser from 18.00 to 19.00 ending on the next hit; one beat of VO silence.",
+      "repo_tools": [
+        "saas-animation",
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "Hero hit -8 dBFS with nothing else within 60 ms; VO -16 LUFS; music at least 12 dB under words."
+    },
+    {
+      "second": 20,
+      "segment": "FEATURE 1",
+      "visual_description": "HIT at 19.00: the UI area fills the frame; title '[FEATURE 1 VERB]' rises in; the line underlines one key word.",
+      "animation_description": "Dolly arrives exactly on 19.00 (ease-out); title words fade up 70 ms stagger; underline draw 300 ms.",
+      "transition_from_previous": "19.00: the push-in finishes and the area becomes the full frame (no cut).",
+      "audio_description": "Secondary hit (-12 dBFS) on 19.00; VO 19.30: '[Feature 1]'.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "saas-animation"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 21,
+      "segment": "FEATURE 1",
+      "visual_description": "A cursor travels to a control and clicks.",
+      "animation_description": "Cursor follows a bezier path 600 ms (power2.inOut); click ripple 250 ms; control state changes.",
+      "transition_from_previous": "20.00: the cursor leaves from the end of the underline.",
+      "audio_description": "Tonal click (-18 dBFS) on contact; faint mouse swish (-32 dB).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 22,
+      "segment": "FEATURE 1",
+      "visual_description": "The result animates: list items reorder and a chart bar grows (real UI copy only).",
+      "animation_description": "Items translate with a soft spring 700 ms, 50 ms stagger; bar scaleY 0 to 1 expo.out 600 ms.",
+      "transition_from_previous": "21.00: the click causes the change (cause and effect on screen).",
+      "audio_description": "Three soft marimba pops (-22 dBFS), rising.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 23,
+      "segment": "FEATURE 1",
+      "visual_description": "The outcome metric '[OUTCOME]' fades in large (only if true and approved).",
+      "animation_description": "Number fades up from blur with a small rise, 500 ms, accent colour on one digit; no scale pop.",
+      "transition_from_previous": "22.00: the chart bar's top edge becomes the metric's baseline.",
+      "audio_description": "Tonal swell (-24 dBFS); VO 22.20 speaks the outcome.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 24,
+      "segment": "FEATURE 1",
+      "visual_description": "Camera drifts; secondary UI dims; the metric card edge glows softly.",
+      "animation_description": "Opacity of other elements 1.0 to 0.7 over 500 ms (sine); camera drift 0.4 %/s; glow breathes 1.5 s.",
+      "transition_from_previous": "23.00: hold with micro-motion.",
+      "audio_description": "Air bed only; VO pauses for a beat.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 25,
+      "segment": "FEATURE 1",
+      "visual_description": "A tooltip appears on hover to reveal one detail.",
+      "animation_description": "Tooltip fades and rises 12 px over 250 ms (power2.out); text words 50 ms stagger.",
+      "transition_from_previous": "24.00: the cursor re-enters and hovers.",
+      "audio_description": "Soft pop (-24 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 26,
+      "segment": "FEATURE 1",
+      "visual_description": "A before/after wipe: the accent line is the wipe edge between two real screenshots.",
+      "animation_description": "Clip-path wipe left to right 900 ms (power3.inOut); line travels with the edge.",
+      "transition_from_previous": "25.00: the tooltip card slides out as the line sweeps in.",
+      "audio_description": "Soft whoosh for the wipe (-30 dB).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "saas-animation"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 27,
+      "segment": "FEATURE 1",
+      "visual_description": "The 'after' state holds; the line rests as the title underline.",
+      "animation_description": "Micro-drift only; line pulses once (1.0 to 1.04, 300 ms).",
+      "transition_from_previous": "26.00: the wipe completes and the frame settles.",
+      "audio_description": "VO ends 26.50; music pad opens slightly (+2 dB, still 12 dB under words).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 28,
+      "segment": "FEATURE 1",
+      "visual_description": "The key UI card compresses to a small tile and slides to a left rail (it becomes a nav item).",
+      "animation_description": "Card shrink to 120 px and curved path 800 ms (power3.inOut); other content fades 300 ms.",
+      "transition_from_previous": "27.00: the card morphs into a tile (shape morph).",
+      "audio_description": "Pop (-18 dBFS) at 27.80; whoosh (-30 dB).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 29,
+      "segment": "FEATURE 2",
+      "visual_description": "HIT at 28.00: the tile expands into a new screen; title '[FEATURE 2 VERB]' appears.",
+      "animation_description": "Tile to full-frame panel 600 ms (power3.inOut); title words fade up 70 ms stagger.",
+      "transition_from_previous": "28.00: the nav tile grows into Feature 2's screen.",
+      "audio_description": "Secondary hit (-12 dBFS) at 28.00; VO 28.30: '[Feature 2]'.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 30,
+      "segment": "FEATURE 2",
+      "visual_description": "The panel's grid lines become the floor of a 3D scene; columns rise from the floor.",
+      "animation_description": "Instanced columns scaleY 0 to h in a wave, 40 ms stagger, expo.out; one key light; shallow depth of field.",
+      "transition_from_previous": "29.00: flat grid lines continue as the 3D floor grid (continuity).",
+      "audio_description": "Quick tonal ratchet under the wave (-26 dBFS) plus a soft sub swell.",
+      "repo_tools": [
+        "Three.js",
+        "react-three-fiber",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 31,
+      "segment": "FEATURE 2",
+      "visual_description": "The camera orbits in one direction; the tallest column turns the accent colour, the rest dim.",
+      "animation_description": "Orbit 0.25 rad/s (sine ease); column colour lerp 400 ms; others to 50 % opacity.",
+      "transition_from_previous": "30.00: same scene, one continuous camera move.",
+      "audio_description": "Air whoosh for the orbit (-30 dB); accent-column tone (-20 dBFS).",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 32,
+      "segment": "FEATURE 2",
+      "visual_description": "A leader line draws to the highlighted column and a label appears: '[METRIC] [VALUE]' (only if real).",
+      "animation_description": "Leader dashoffset 350 ms (power2.out); label fades up from blur 400 ms.",
+      "transition_from_previous": "31.00: the leader line grows from the column top.",
+      "audio_description": "Tick (-22 dBFS).",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 33,
+      "segment": "FEATURE 2",
+      "visual_description": "The camera moves in; the column's top face becomes a flat insight card.",
+      "animation_description": "Dolly 600 to 250 over 800 ms (power3.inOut); top face scales to card proportions 700 ms.",
+      "transition_from_previous": "32.00: the column top morphs into the card (3D to 2D continuity).",
+      "audio_description": "Slide-appear (-22 dBFS).",
+      "repo_tools": [
+        "Three.js",
+        "react-three-fiber",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 34,
+      "segment": "FEATURE 2",
+      "visual_description": "The insight card fills: a sparkline draws and '[INSIGHT TEXT]' (real copy) fades in.",
+      "animation_description": "Path draw 900 ms (power2.out); text words fade up 60 ms stagger.",
+      "transition_from_previous": "33.00: card content builds in place.",
+      "audio_description": "Soft pad swell (-26 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 35,
+      "segment": "FEATURE 2",
+      "visual_description": "Hold with drift; the line underlines one key word.",
+      "animation_description": "Underline draw 400 ms (power3.out); camera drift 0.4 %/s.",
+      "transition_from_previous": "34.00: hold with micro-motion.",
+      "audio_description": "VO ends 34.60; music dips 1 dB for a breath.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 36,
+      "segment": "FEATURE 2",
+      "visual_description": "The card flips to its back: a row of approved partner or integration logos (placeholders if none).",
+      "animation_description": "rotateY 180 degrees over 600 ms (power3.inOut); swap at edge-on (35.50); logos fade up 60 ms stagger.",
+      "transition_from_previous": "35.00: edge-on frame hides the content swap.",
+      "audio_description": "Slide-appear plus tick at the edge-on frame (-20 dBFS).",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 37,
+      "segment": "FEATURE 2",
+      "visual_description": "The logo row floats up as a ribbon; the camera pulls back; the ribbon bends into a path.",
+      "animation_description": "Ribbon translate and curve 800 ms (power3.inOut); camera z 250 to 700.",
+      "transition_from_previous": "36.00: the ribbon becomes the accent line again (carrier returns).",
+      "audio_description": "Soft whoosh (-30 dB); riser starts at 36.20 for the next hit.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "Three.js"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 38,
+      "segment": "FEATURE 3",
+      "visual_description": "HIT at 37.00: the line sweeps across and becomes a horizontal timeline; title '[FEATURE 3 VERB]'.",
+      "animation_description": "Line to timeline 500 ms (power3.inOut); title words fade up 70 ms stagger.",
+      "transition_from_previous": "37.00: the carrier line sets up Feature 3's visual.",
+      "audio_description": "Secondary hit (-12 dBFS) at 37.00; VO 37.30: '[Feature 3]'.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 39,
+      "segment": "FEATURE 3",
+      "visual_description": "Three step nodes appear along the line one after another (1, 2, 3).",
+      "animation_description": "Nodes scale 0 to 1 with back.out(1.2) 300 ms, 250 ms stagger; labels fade up from blur.",
+      "transition_from_previous": "38.00: nodes grow out of the line.",
+      "audio_description": "Three tonal clicks rising (-20 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 40,
+      "segment": "FEATURE 3",
+      "visual_description": "Node 1 expands into a mini UI card; the cursor clicks 'connect'.",
+      "animation_description": "Node to card morph 500 ms; cursor path 500 ms.",
+      "transition_from_previous": "39.00: node becomes a card.",
+      "audio_description": "Click (-18 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 41,
+      "segment": "FEATURE 3",
+      "visual_description": "A check mark draws on and progress fills to 33 % along the line, its hot head leading.",
+      "animation_description": "Dashoffset fill 600 ms (power2.inOut); tick stamp 200 ms.",
+      "transition_from_previous": "40.00: the click's result fills the line.",
+      "audio_description": "Tonal tick plus soft hit (-18 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 42,
+      "segment": "FEATURE 3",
+      "visual_description": "Step 2 plays at the same pace: card morphs to card; progress reaches 66 %.",
+      "animation_description": "Shape morph 500 ms; fill 500 ms.",
+      "transition_from_previous": "41.00: step 1's card shrinks back into its node while step 2 grows.",
+      "audio_description": "Pop pitched +10 % (-20 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 43,
+      "segment": "FEATURE 3",
+      "visual_description": "Step 3 completes; progress hits 100 %; eight brand-colour ink ticks burst once; a short glow flash.",
+      "animation_description": "Radial burst over 250 ms; glow 300 ms; line pulses.",
+      "transition_from_previous": "42.00: the final node fills and releases the burst.",
+      "audio_description": "Marimba hit plus soft low hit (-16 dBFS); no bells or dings.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 44,
+      "segment": "FEATURE 3",
+      "visual_description": "The line lifts off the timeline and shoots toward the camera; the camera flies through the screen.",
+      "animation_description": "Camera dolly through the plane 700 ms (power3.in); streak blur on the line.",
+      "transition_from_previous": "43.00: the line becomes a tunnel into the next scene.",
+      "audio_description": "Whoosh (-26 dB) peaking at 43.70.",
+      "repo_tools": [
+        "Three.js",
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 45,
+      "segment": "FEATURE 3",
+      "visual_description": "A soft-focus stage: a 3D device (GLB model or a built panel device) turns slowly showing the product.",
+      "animation_description": "Device rotateY 20 to -10 degrees over 1 s (sine); one key light; background bokeh 8 px.",
+      "transition_from_previous": "44.00: the tunnel opens onto a stage (no cut).",
+      "audio_description": "Air bed lifts; no VO.",
+      "repo_tools": [
+        "Three.js",
+        "react-three-fiber",
+        "saas-animation"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 46,
+      "segment": "FEATURE 3",
+      "visual_description": "The device screen shows the hero UI; the camera pushes toward the screen.",
+      "animation_description": "Dolly 900 to 500 over 1 s (power3.inOut).",
+      "transition_from_previous": "45.00: same device, same camera move continues.",
+      "audio_description": "Riser for the proof hit; faint whoosh (-33 dB).",
+      "repo_tools": [
+        "Three.js",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; secondary hits -12 dBFS; UI clicks -22 to -18 dBFS; whooshes -33 to -26 dB."
+    },
+    {
+      "second": 47,
+      "segment": "PROOF",
+      "visual_description": "HIT at 46.00: the screen fills the frame; a large real number '[N]' fades up (only if true and approved) with a short label.",
+      "animation_description": "Number fade-up from blur 500 ms; label fades 300 ms after; accent on one digit.",
+      "transition_from_previous": "46.00: the device screen becomes the full frame.",
+      "audio_description": "Proof hit (-12 dBFS) at 46.00; VO 46.30: '[Proof line]'.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 48,
+      "segment": "PROOF",
+      "visual_description": "The number holds with an accent underline; approved customer logos fade in beneath.",
+      "animation_description": "Logos fade up from blur, 60 ms stagger; underline draw 300 ms.",
+      "transition_from_previous": "47.00: hold with drift.",
+      "audio_description": "Air only.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 49,
+      "segment": "PROOF",
+      "visual_description": "A real quote card slides in from the right: '[REAL QUOTE]', '[NAME, ROLE]' (approved).",
+      "animation_description": "Card translate along a curve 900 ms (power3.out); quote words fade up 50 ms stagger.",
+      "transition_from_previous": "48.00: the number block shifts left to make room.",
+      "audio_description": "Slide-appear (-22 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 50,
+      "segment": "PROOF",
+      "visual_description": "A rating row fills star by star (only if real); otherwise a second approved quote holds.",
+      "animation_description": "Stars fill 120 ms stagger; micro drift.",
+      "transition_from_previous": "49.00: the quote card holds while the rating builds.",
+      "audio_description": "Rising tonal clicks (-22 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 51,
+      "segment": "PROOF",
+      "visual_description": "Number, quote and logos shrink into three dots that line up on the horizontal line.",
+      "animation_description": "Scale-to-dot 500 ms (power3.in), 80 ms stagger, then travel to the line.",
+      "transition_from_previous": "50.00: proof elements become dots on the carrier line.",
+      "audio_description": "Suction (-26 dB) plus pop (-18 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 52,
+      "segment": "PROOF",
+      "visual_description": "A one-beat breath: the line dims to 20 % and the frame is nearly empty.",
+      "animation_description": "Line opacity 1.0 to 0.2 over 250 ms; no camera motion.",
+      "transition_from_previous": "51.00: everything else is gone; the line is the only thing left.",
+      "audio_description": "Music out at 51.40 except a reversed swell peaking 51.95; no VO.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "VO -16 LUFS; proof hit -12 dBFS; keep SFX sparse so numbers and quotes read."
+    },
+    {
+      "second": 53,
+      "segment": "PAYOFF",
+      "visual_description": "FINAL HIT at 52.00: the line slots into the logo mark; the logo (pixel-exact, centred by its visible bounds) is revealed.",
+      "animation_description": "Line slot 300 ms (power4.out); 4 px shake; light shards; wordmark reveal.",
+      "transition_from_previous": "52.00: the dimmed line snaps to full brightness and lands in the logo (carrier returns home).",
+      "audio_description": "Full warm chord plus low hit at 52.00 (-8 dBFS); nothing else within 60 ms.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP",
+        "official logo file"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 54,
+      "segment": "PAYOFF",
+      "visual_description": "Logo holds alive; a slow light passes beneath it.",
+      "animation_description": "Light sweep sine.inOut 1.2 s; no camera drift is required here, a 0.3 %/s drift is acceptable.",
+      "transition_from_previous": "53.00: hold.",
+      "audio_description": "VO 53.20: '[Brand line]'; chord rings.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 55,
+      "segment": "PAYOFF",
+      "visual_description": "The tagline '[OUTCOME TAGLINE]' appears word by word below the logo (a third to half the wordmark size).",
+      "animation_description": "Words fade up from blur, 70 ms stagger; logo eases up 4 % to make room (one continuous curve).",
+      "transition_from_previous": "54.00: logo shifts up as the tagline arrives.",
+      "audio_description": "Pad only.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 56,
+      "segment": "PAYOFF",
+      "visual_description": "The call to action: a search-box shape grows from the line and types the URL '[URL]' with a blinking caret.",
+      "animation_description": "Box grows from the line 400 ms (power3.out); typing 40 ms per character; caret blinks at 2 Hz.",
+      "transition_from_previous": "55.00: the line extends into the search field.",
+      "audio_description": "VO 55.20: '[Call to action]'; typing ticks off by default.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 57,
+      "segment": "PAYOFF",
+      "visual_description": "A button '[Get started]' fades in beside the field with a soft focus ring.",
+      "animation_description": "Fade-up 300 ms; focus ring opacity 0 to 0.6 over 300 ms; no scale pop.",
+      "transition_from_previous": "56.00: button grows out of the field's right edge.",
+      "audio_description": "Soft pop (-20 dBFS).",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 58,
+      "segment": "PAYOFF",
+      "visual_description": "End card is static and perfectly centred: logo, tagline, CTA; no camera drift from here.",
+      "animation_description": "One last light sweep across the wordmark (sine.inOut 1.0 s); everything else still.",
+      "transition_from_previous": "57.00: camera drift eases to zero over 300 ms, then holds.",
+      "audio_description": "Chord tail rings; no new SFX.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 59,
+      "segment": "PAYOFF",
+      "visual_description": "The logo defocuses slightly; the accent line's light becomes a single dot below it. (Spec ads: small line 'Spec ad. Not affiliated with <brand>.')",
+      "animation_description": "Logo blur 0 to 6 px over 800 ms (sine); dot pulses once; disclaimer fades in at 60 % opacity if this is a spec ad.",
+      "transition_from_previous": "58.00: logo softens while the dot takes focus.",
+      "audio_description": "Tail fades at about -3 dB per second.",
+      "repo_tools": [
+        "HyperFrames",
+        "GSAP"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    },
+    {
+      "second": 60,
+      "segment": "PAYOFF",
+      "visual_description": "Final frame: dot fades to black; URL and small disclaimer remain for the last half second.",
+      "animation_description": "Dot opacity to 0 by 59.70; hold on black with URL.",
+      "transition_from_previous": "59.00: the dot dissolves into the dark stage.",
+      "audio_description": "Music reaches silence at 60.00; master -14 LUFS, true peak -1.5 dBTP or lower, 48 kHz.",
+      "repo_tools": [
+        "HyperFrames",
+        "FFmpeg",
+        "openai/whisper",
+        "audio-analyzer-rs"
+      ],
+      "mix_notes": "Final hit and chord -8 dBFS ringing under the end card; master -14 LUFS, true peak -1.5 dBTP or lower."
+    }
+  ]
+}

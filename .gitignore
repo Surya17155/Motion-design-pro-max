@@ -1,0 +1,23 @@
+# Runtime-generated / local-only (never commit)
+node_modules/
+*.log
+repos/vendor/
+projects/
+tests/report/
+out/
+dist/
+build/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+**/.DS_Store
